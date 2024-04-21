@@ -1,3 +1,20 @@
+def chek_string_brakets(input_string):
+    spis = []
+    for char in input_string:
+        if char == "(":
+            spis.append(char)
+        elif char == ")":
+            if len(spis) == 0:
+                print("no")
+                return
+            spis.pop()
+    if len(spis) == 0:
+        print("yes")
+    else:
+        print("no")
+
+
+chek_string_brakets("()")
 """
 Задание:
 Напишите функцию check_string_brackets(input_string), 
