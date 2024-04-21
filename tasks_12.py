@@ -7,4 +7,23 @@
 Обратите внимание, что пустая строка также является 
 правильной скобочной последовательностью.
 """
-print('first pull request')
+def check_string_brackets(input_string):
+    stack = []
+    for char in input_string:
+        if char == "(":
+            stack.append(char)
+        elif char == ")":
+            if len(stack) == 0:
+                print("NO")
+                return
+            stack.pop()
+
+            if len(stack) == 0:
+                print("YES")
+            else:
+                print("NO")
+
+
+check_string_brackets("()")
+
+
