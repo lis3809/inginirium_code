@@ -18,24 +18,22 @@
 """
 
 def check_string_brackets(input_string):
-    stack = []
-    for char in input_string:
-        if char == "(":
-            stack.append(char)
-        elif char == ")":
-            if len(stack) == 0:
-                print("NO")
-                return
-            stack.pop()
-
-    if len(stack) == 0:
-        print("YES")
+    list = []
+    for i in input_string:
+        if i == '(':
+            list.append(i)
+        if i == ')':
+            if len(list) != 0:
+                list.pop()
+            else:
+                print('NO')
+                return 
+    if len(list) == 0:
+        print('YES')
     else:
-        print("NO")
+        print('NO')
 
-
-check_string_brackets("()")
-check_string_brackets("(()())")
-check_string_brackets("(()(()")
-check_string_brackets(")(")
-
+check_string_brackets('()')
+check_string_brackets('(()())')
+check_string_brackets('(()(()')
+check_string_brackets(')(')
